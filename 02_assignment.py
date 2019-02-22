@@ -27,7 +27,7 @@ def exercise01():
     # Create a list called animals containing the following animals: cat, dog, crouching tiger, hidden dragon, manta ray
 
     # ------ Place code below here \/ \/ \/ ------
-
+animals = ['cat', 'dog', 'crouching tiger', 'hidden dragon', 'manta ray']
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -38,7 +38,13 @@ def exercise02():
     # Repeat exercise 1 and loop through and print each item in the animal list by iterating through an index number and using range(). Set the variable len_animals to the length of the animal list.
 
     # ------ Place code below here \/ \/ \/ ------
-
+len_animals = len(animals)
+animals = ['cat', 'dog', 'crouching tiger', 'hidden dragon', 'manta ray']
+for i in range(len_animals):
+    print(animals[i]),len_animals
+    
+animals
+len_animals
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -54,7 +60,13 @@ def exercise03():
     the_fifth_element = -999
 
     # ------ Place code below here \/ \/ \/ ------
-
+countdown = [9, 8, 7, 5, 4, 2, 1, 6, 10, 3, 0, -5]
+countdown.sort(reverse = True)
+#The list after the sort
+print(countdown)
+#The element is n - 1
+the_fifth_element = countdown[4]
+the_fifth_element
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -90,7 +102,15 @@ def exercise05(n):
 
     # ------ Place code below here \/ \/ \/ ------
 
-    pass # Remove this line
+# f(5) = 5 * f(4)
+# f(4) = 5 * f(3)
+# f(3) = 5 * f(2)
+# f(2) = 5 * f(1)
+
+#f(2) = 2 * 1 -> 2
+#f(3) = 3 * 2 -> 6
+#f(2) = 4 * 6 -> 24
+#f(2) = 5 * 24 -> 120
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -110,6 +130,15 @@ def exercise07(n):
 
     # ------ Place code below here \/ \/ \/ ------
 
+def has_duplicates(t):
+    """Returns True if any element appears more than once in (t),
+    False otherwise."""
+    s = t[:]
+    s.sort()
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
+            return True
+    return False
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -140,7 +169,19 @@ def exercise09():
     
     # ------ Place code below here \/ \/ \/ ------
     
-
+    dogs = [url]
+    url = 'https://random.dog/woof.json', 
+    'https://www.dogster.com/wp-content/uploads/2018/06/Chinese-Shar-Pei-4-600x400.jpg',
+    'https://www.hillspet.com/content/dam/cp-sites/hills/hills-pet/en_us/img/breeds/german-shepherd-tongue-out-outside.jpg',
+    'https://www.thesprucepets.com/thmb/IQGCoLl7dB6RaigKHDZbw3myQvg=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/portrait-if-a-spitz-pomeranian_t20_v3o29E-5ae9bbdca18d9e0037d95983.jpg',
+    'https://gfnc1kn6pi-flywheel.netdna-ssl.com/wp-content/uploads/2018/05/belgian-dog-breeds-header.jpg',
+    'https://i.ytimg.com/vi/IHIbg3zHJ20/maxresdefault.jpg',
+    'https://i.ytimg.com/vi/dw-olMXonus/maxresdefault.jpg',
+    'http://www.directexpose.com/wp-content/uploads/2018/02/e57e24e7-23.-chow-chow-rare-dog-breeds-paws-playgrounds-dotcom.jpg',
+    'https://hips.hearstapps.com/ghk.h-cdn.co/assets/17/40/collie.jpg?crop=1.0xw:1xh;center,top&resize=480:*',
+    'https://icdn3.themanual.com/image/themanual/best-dog-breeds-alaskan-malamute-800x1500.jpg'
+    dog_media = r.get(url=url)
+    print(str(dog_media.content))    
 
     # ------ Place code above here /\ /\ /\ ------
 
@@ -153,7 +194,13 @@ def exercise10(sentence):
 
     # ------ Place code below here \/ \/ \/ ------
     
-
+def reverse(string):
+    if len(string) == 0:
+        return string
+    else:
+        return reverse(string[1:]) + string[0]
+a = str(input("Robert"))
+print(reverse(a))
 
     # ------ Place code above here /\ /\ /\ ------
     return reversed
